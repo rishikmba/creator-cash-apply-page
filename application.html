@@ -1,0 +1,301 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Cash Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #8B3A8F 0%, #C73B8D 50%, #D94A6F 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .form-wrapper {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2C3E50;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        label {
+            display: block;
+            color: #2C3E50;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .field-wrapper {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .field-wrapper:last-of-type {
+            margin-bottom: 32px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 100%;
+            padding: 16px 20px;
+            margin-bottom: 0;
+            background: #F8F9FA;
+            border: 2px solid #E0E0E0;
+            border-radius: 12px;
+            font-size: 16px;
+            color: #333;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus {
+            border-color: #4A90E2;
+            background: #FFFFFF;
+        }
+
+        /* Error states */
+        input.error {
+            border-color: #E74C3C;
+            background: #FFEBEE;
+        }
+
+        .error-message {
+            display: none;
+            color: #E74C3C;
+            font-size: 14px;
+            margin-top: 6px;
+            margin-bottom: 0;
+            padding-left: 4px;
+            line-height: 1.4;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .helper-text {
+            color: #5A6C7D;
+            font-size: 14px;
+            margin-top: 6px;
+            margin-bottom: 0;
+            padding-left: 4px;
+            line-height: 1.4;
+        }
+
+        .top-alert {
+            display: none;
+            background: #FFEBEE;
+            border-left: 4px solid #E74C3C;
+            color: #C62828;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .top-alert.show {
+            display: block;
+        }
+
+        /* Visual feedback for confirm email matching */
+        input.email-match {
+            border-color: #27AE60;
+            background: #E8F8F5;
+        }
+
+        input.email-mismatch {
+            border-color: #E74C3C;
+            background: #FFEBEE;
+        }
+
+        input::placeholder {
+            color: #999;
+        }
+
+        /* Style for date input */
+        input[type="date"] {
+            position: relative;
+            color: #333;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 18px;
+            background: #04F761;
+            color: #1A1A1A;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        button[type="submit"]:hover:not(:disabled) {
+            background: #03DE54;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(4, 247, 97, 0.3);
+        }
+
+        button[type="submit"]:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        button[type="submit"]:disabled {
+            background: #A0A0A0;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .terms {
+            font-size: 13px;
+            color: #5A6C7D;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .terms a {
+            color: #2C3E50;
+            text-decoration: underline;
+        }
+
+        .terms a:hover {
+            color: #1A252F;
+        }
+
+        /* Responsive design */
+        @media (max-width: 640px) {
+            .form-wrapper {
+                padding: 30px 24px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+            label {
+                font-size: 15px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="date"] {
+                padding: 14px 16px;
+                font-size: 15px;
+            }
+
+            button[type="submit"] {
+                font-size: 17px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-wrapper">
+            <h1>Apply for Creator Cash</h1>
+
+            
+            <form id="applicationForm">
+
+                <div id="topAlert" class="top-alert">
+                    There is a problem. Check the fields highlighted below.
+                </div>
+
+                <div class="field-wrapper">
+                    <label for="firstName">First Name</label>
+                    <input type="text" data-field="first-name" class="custom-class" placeholder="First Name" id="firstName" name="firstName" required=""/>
+                    <p class="error-message" id="firstName-error"></p>
+                </div>
+
+                <div class="field-wrapper">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" data-field="last-name" class="custom-class" placeholder="Last Name" id="lastName" name="lastName" required=""/>
+                    <p class="error-message" id="lastName-error"></p>
+                </div>
+
+                <div class="field-wrapper">
+                    <label for="email">Email</label>
+                    <input type="email" data-field="email" class="custom-class" placeholder="name@example.com" id="email" name="email" required=""/>
+                    <p id="email-helper" class="helper-text">We will send confirmations to this email.</p>
+                    <p id="email-error" class="error-message"></p>
+                </div>
+
+                <div class="field-wrapper">
+                    <label for="confirmEmail">Confirm Email Address</label>
+                    <input type="email" data-field="confirm-email" class="custom-class" placeholder="Confirm Email Address" id="confirmEmail" name="confirmEmail" required=""/>
+                    <p id="confirmEmail-error" class="error-message"></p>
+                </div>
+
+                <div class="field-wrapper">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" data-field="phone" class="custom-class" placeholder="555-123-4567" id="phone" name="phone" required=""/>
+                    <p id="phone-helper" class="helper-text">US mobile number, including area code.</p>
+                    <p id="phone-error" class="error-message"></p>
+                </div>
+
+                <div class="field-wrapper">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" data-field="dob" class="custom-class" id="dob" name="dob" required=""/>
+                    <p id="dob-helper" class="helper-text">You must be at least 18 years old.</p>
+                    <p id="dob-error" class="error-message"></p>
+                </div>
+
+                
+                <input type="hidden" data-field="country" class="custom-class" value="United States" id="country" name="country"/>
+
+                <button type="submit" id="submitButton">Submit Application</button>
+
+                <div class="terms">
+                    By submitting, you agree to our <a href="https://www.revolt.tv/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Use</a> and <a href="https://www.revolt.tv/privacy-notice" target="_blank" rel="noopener noreferrer">Privacy Notice</a>. You may receive emails from us and can unsubscribe at any time.
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>
