@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            background: linear-gradient(135deg, #F5A642 0%, #8B5CF6 100%);
+            background: linear-gradient(135deg, #8B3A8F 0%, #C73B8D 50%, #D94A6F 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -213,7 +213,7 @@
 
         .checkmark-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             margin-bottom: 16px;
             color: #2C3E50;
         }
@@ -226,20 +226,18 @@
             flex-shrink: 0;
             width: 28px;
             height: 28px;
-            background: #D1FAE5;
-            border: 2px solid #10B981;
+            background: #10B981;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 12px;
-            margin-top: 2px;
         }
 
         .checkmark-icon svg {
             width: 16px;
             height: 16px;
-            fill: #059669;
+            fill: #FFFFFF;
         }
 
         .checkmark-text {
@@ -328,7 +326,7 @@
                 <div class="field-wrapper">
                     <label for="phone">Mobile Number</label>
                     <input type="tel" field-phone class="field-phone" placeholder="555-123-4567" id="phone" required=""/>
-                    <p id="phone-helper" class="helper-text">US mobile number, including area code.</p>
+                    <p id="phone-helper" class="helper-text">We will text you when your application is approved.</p>
                     <p id="phone-error" class="error-message"></p>
                 </div>
 
