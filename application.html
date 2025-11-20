@@ -202,6 +202,52 @@
             color: #1A252F;
         }
 
+        /* Checkmarks section */
+        .checkmarks-container {
+            background: #4A4A4A;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+            margin-bottom: 20px;
+        }
+
+        .checkmark-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            color: #FFFFFF;
+        }
+
+        .checkmark-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkmark-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: #6B6B6B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            margin-top: 2px;
+        }
+
+        .checkmark-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: #FFFFFF;
+        }
+
+        .checkmark-text {
+            flex: 1;
+            font-size: 15px;
+            line-height: 1.5;
+            letter-spacing: 0.2px;
+        }
+
         /* Responsive design */
         @media (max-width: 640px) {
             .form-wrapper {
@@ -228,6 +274,15 @@
             button[type="submit"] {
                 font-size: 17px;
                 padding: 16px;
+            }
+
+            .checkmarks-container {
+                padding: 20px;
+                margin-top: 24px;
+            }
+
+            .checkmark-text {
+                font-size: 14px;
             }
         }
     </style>
@@ -285,6 +340,39 @@
 
 
                 <input type="hidden" field-country class="field-country" value="United States" id="country"/>
+
+                <div class="checkmarks-container">
+                    <div class="checkmark-item">
+                        <div class="checkmark-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                            </svg>
+                        </div>
+                        <div class="checkmark-text">
+                            If accepted, a small cash-advance fee of 5% is automatically deducted from your earnings.
+                        </div>
+                    </div>
+                    <div class="checkmark-item">
+                        <div class="checkmark-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                            </svg>
+                        </div>
+                        <div class="checkmark-text">
+                            No upfront or hidden fees.
+                        </div>
+                    </div>
+                    <div class="checkmark-item">
+                        <div class="checkmark-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                            </svg>
+                        </div>
+                        <div class="checkmark-text">
+                            Cancel any time.
+                        </div>
+                    </div>
+                </div>
 
                 <button type="submit" id="submitButton">Submit Application</button>
 
