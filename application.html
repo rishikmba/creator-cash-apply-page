@@ -232,17 +232,15 @@
             align-items: center;
             justify-content: center;
             margin-right: 12px;
+            position: relative;
         }
 
-        .checkmark-icon svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .checkmark-icon svg path {
-            stroke: #2FA66A;
-            stroke-width: 2;
-            fill: none;
+        .checkmark-icon::before {
+            content: '✓';
+            color: #2FA66A;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1;
         }
 
         .checkmark-text {
@@ -347,31 +345,19 @@
 
                 <div class="checkmarks-container">
                     <div class="checkmark-item">
-                        <div class="checkmark-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                            </svg>
-                        </div>
+                        <div class="checkmark-icon"></div>
                         <div class="checkmark-text">
                             If accepted, a small cash-advance fee of 5% is automatically deducted from your earnings.
                         </div>
                     </div>
                     <div class="checkmark-item">
-                        <div class="checkmark-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                            </svg>
-                        </div>
+                        <div class="checkmark-icon"></div>
                         <div class="checkmark-text">
                             No upfront or hidden fees.
                         </div>
                     </div>
                     <div class="checkmark-item">
-                        <div class="checkmark-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                            </svg>
-                        </div>
+                        <div class="checkmark-icon"></div>
                         <div class="checkmark-text">
                             Cancel any time.
                         </div>
